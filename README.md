@@ -8,8 +8,7 @@ In this integration information regarding Place events are sent to Adobe Analyti
 
 Please refer to the [hello-gimbal-ios](https://github.com/gimbalinc/hello-gimbal-ios) for generic Gimbal setup and dependencies. We use [CocoaPods](https://cocoapods.org/?q=gimbal) to install our SDK.
 
-```
-#!ruby
+```ruby
 pod 'Gimbal'
 ```
 
@@ -29,8 +28,7 @@ For more detailed information see the [Adobe Documentation](https://marketing.ad
 
 To make integration easier we have created a helper class GimbalAdobeAnalyticsAdapter that exposes a simple method
 
-```
-#!swift
+```swift
 GimbalAdobeAnalyticsAdapter.sharedInstance.startGimbalAndLogEvents("PUT_YOUR_GIMBAL_API_KEY_HERE")
 ```
 
@@ -38,8 +36,7 @@ By invoking this method with the appropriate Gimbal API key both frameworks are 
 
 The code for GimbalAdobeAnalyticsAdapter shows how Place events are sent to Adobe.
 
-```
-#!swift
+```swift
 
 import Foundation
 
