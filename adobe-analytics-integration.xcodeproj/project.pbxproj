@@ -175,6 +175,7 @@
 					74E3549B1B4EF71C00356163 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 3ETG9R4M5P;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -403,6 +404,7 @@
 				PRODUCT_NAME = "adobe-analytics-integration";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "adobe-analytics-integration/GimbalObjectiveCBridgingHeader.h";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -430,6 +432,7 @@
 				PRODUCT_NAME = "adobe-analytics-integration";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "adobe-analytics-integration/GimbalObjectiveCBridgingHeader.h";
+				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
