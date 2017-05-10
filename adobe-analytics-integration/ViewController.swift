@@ -10,13 +10,13 @@ class ViewController: UITableViewController, GMBLPlaceManagerDelegate {
         self.placeManager.delegate = self
     }
     
-    func placeManager(_ manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) -> Void {
-        self.placeEvents.insert(visit, atIndex: 0)
+    func placeManager(_ manager: GMBLPlaceManager!, didBegin visit: GMBLVisit!) -> Void {
+        self.placeEvents.insert(visit, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with:UITableViewRowAnimation.automatic)
     }
     
-    func placeManager(_ manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) -> Void {
-        self.placeEvents.insert(visit, atIndex: 0)
+    func placeManager(_ manager: GMBLPlaceManager!, didEnd visit: GMBLVisit!) -> Void {
+        self.placeEvents.insert(visit, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
     }
     
@@ -30,11 +30,11 @@ class ViewController: UITableViewController, GMBLPlaceManagerDelegate {
         
         if (visit.departureDate == nil) {
             cell.textLabel!.text = NSString(format: "Begin: %@", visit.place.name) as String
-            cell.detailTextLabel!.text = DateFormatter.localizedStringFromDate(visit.arrivalDate, dateStyle: DateFormatter.Style.ShortStyle, timeStyle: DateFormatter.Style.MediumStyle)
+            cell.detailTextLabel!.text = DateFormatter.localizedString(from: visit.arrivalDate, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.medium)
         }
         else {
             cell.textLabel!.text = NSString(format: "End: %@", visit.place.name) as String
-            cell.detailTextLabel!.text = DateFormatter.localizedStringFromDate(visit.arrivalDate, dateStyle: DateFormatter.Style.ShortStyle, timeStyle: DateFormatter.Style.MediumStyle)
+            cell.detailTextLabel!.text = DateFormatter.localizedString(from: visit.arrivalDate, dateStyle: DateFormatter.Style.short, timeStyle: DateFormatter.Style.medium)
         }
         
         return cell

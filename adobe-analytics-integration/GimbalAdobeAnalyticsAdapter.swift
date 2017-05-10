@@ -19,14 +19,14 @@ class GimbalAdobeAnalyticsAdapter: NSObject, GMBLPlaceManagerDelegate {
         ADBMobile.collectLifecycleData()
     }
     
-    func placeManager(_ manager: GMBLPlaceManager!, didBeginVisit visit: GMBLVisit!) -> Void {
+    func placeManager(_ manager: GMBLPlaceManager!, didBegin visit: GMBLVisit!) -> Void {
         NSLog("Begin Gimbal Visit for %@", visit.place.description)
-        ADBMobile.trackAction("gimbal.place.visit.begin", data:  self.visitData(visit))
+        ADBMobile.trackAction(fromBackground: "gimbal.place.visit.begin", data:  self.visitData(visit))
     }
     
-    func placeManager(_ manager: GMBLPlaceManager!, didEndVisit visit: GMBLVisit!) -> Void {
+    func placeManager(_ manager: GMBLPlaceManager!, didEnd visit: GMBLVisit!) -> Void {
         NSLog("End Gimbal Visit for %@", visit.place.description)
-        ADBMobile.trackAction("gimbal.place.visit.end", data: self.visitData(visit))
+        ADBMobile.trackAction(fromBackground: "gimbal.place.visit.end", data: self.visitData(visit))
     }
     
     func visitData(_ visit: GMBLVisit!) -> Dictionary<String,String> {
